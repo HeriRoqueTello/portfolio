@@ -1,8 +1,5 @@
 import { useState } from 'react';
 
-import { DiGithubBadge as Github } from "react-icons/di";
-import { AiFillLinkedin as Linkedin, AiOutlineMenu as Menu } from "react-icons/ai";
-
 
 export const Navbar = () => {
 
@@ -20,8 +17,8 @@ export const Navbar = () => {
   return (
     <nav className="w-full h-16 flex justify-around items-center bg-transparent backdrop-blur-md text-white text-xl shadow-sm sticky top-0 z-50">
       
-      <div className='md:hidden'>
-        <Menu  onClick={handleMenu}/>
+      <div className='md:hidden' onClick={handleMenu}>
+        <i class="fa-sharp fa-solid fa-bars"></i>
       </div>
 
       <div>
@@ -47,8 +44,8 @@ export const Navbar = () => {
           </ul>
         </div>
       <div className='flex flex-row gap-4 text-3xl'>
-        <a target='_blank' href="https://github.com/heriroquetello"><Github /></a>
-        <a target='_blank' href="https://www.linkedin.com/in/heriroquetello/"><Linkedin /></a> 
+        <a href="https://github.com/HeriRoqueTello" target="_blank" class="link"><i class="fa-brands fa-github-alt"></i></a>
+        <a target='_blank' href="https://www.linkedin.com/in/heriroquetello/"><i class="fa-brands fa-linkedin"></i></a> 
       </div>
     </nav>
   )
