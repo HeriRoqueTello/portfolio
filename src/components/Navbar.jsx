@@ -21,7 +21,7 @@ export const Navbar = () => {
       </div>
 
       <div className='flex flex-row justify-between items-center gap-4'>
-        <img className='h-10' src="src/assets/svg/logo-no-background.svg" alt="" />
+        <img className='h-10' src="../assets/svg/logo-no-background.svg" alt="Logo" />
         <a href="/">Heri Roque Tello</a>
       </div>
 
