@@ -1,8 +1,7 @@
 import { useState } from 'react';
 
-import { MdMenu as Menu } from 'react-icons/md';
 import { DiGithubBadge as Github } from "react-icons/di";
-import { AiFillLinkedin as Linkedin } from "react-icons/ai";
+import { AiFillLinkedin as Linkedin, AiOutlineMenu as Menu } from "react-icons/ai";
 
 
 export const Navbar = () => {
