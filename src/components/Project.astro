@@ -1,0 +1,67 @@
+---
+export interface Props {
+	name: string;
+	description: string;
+	image: string;
+	date: {
+		year: string;
+		other: string;
+	};
+	urlDemo: string;
+	urlRepo: string;
+	tags: {
+		name: string;
+		color: string;
+	}[];
+}
+const { name, description, image, date, urlDemo, urlRepo, tags } = Astro.props;
+---
+
+<article class="flex bg-white transition hover:shadow-xl dark:bg-gray-800 dark:shadow-gray-800/25 mt-4">
+	<div class="rotate-180 p-2 [writing-mode:_vertical-lr]">
+		<time
+			datetime={`${date.year} ${date.other}`}
+			class="flex items-center justify-between gap-4 text-xs font-bold uppercase text-gray-900 dark:text-white"
+		>
+			<span>{date.year}</span>
+			<span class="w-px flex-1 bg-gray-900/10 dark:bg-white/10"></span>
+			<span>{date.other}</span>
+		</time>
+	</div>
+
+	<div class="hidden sm:block sm:basis-56">
+		<img alt={name} src={image} class="aspect-square h-full w-full object-cover" />
+	</div>
+
+	<div class="flex flex-1 flex-col justify-between">
+		<div class="border-l border-gray-900/10 p-4 dark:border-white/10 sm:!border-l-transparent sm:p-6 h-full">
+			<a href="#">
+				<h3 class="font-bold uppercase text-gray-900 dark:text-white">{name}</h3>
+			</a>
+
+			<p class="mt-2 text-sm leading-relaxed text-gray-700 line-clamp-3 dark:text-gray-200">
+				{description}
+			</p>
+			<div class="my-4 flex flex-wrap gap-1">
+				{tags.map((tag) => <span class={`whitespace-nowrap rounded-full px-2.5 py-0.5 text-xs ${tag.color}`}>{tag.name}</span>)}
+			</div>
+
+			<div class="sm:flex sm:items-end sm:justify-end lg:space-x-2">
+				<a
+					href={urlDemo}
+					target="_blank"
+					class="block bg-indigo-400 px-5 py-3 text-center text-xs font-bold uppercase text-gray-900 transition hover:bg-indigo-500"
+				>
+					View Demo
+				</a>
+				<a
+					href={urlRepo}
+					target="_blank"
+					class="block bg-teal-400 px-5 py-3 text-center text-xs font-bold uppercase text-gray-900 transition hover:bg-teal-500"
+				>
+					View Repo
+				</a>
+			</div>
+		</div>
+	</div>
+</article>

@@ -1,0 +1,22 @@
+---
+import Project from '../components/Project.astro';
+import { projects } from '../constants/projects';
+const { name, description, image, date, urlDemo, urlRepo, tags } = Astro.props;
+---
+
+<div id="projects" class="container h-full max-w-4xl mx-auto my-8 scroll-mt-24 space-y-4">
+	<h2 class="text-4xl bg-clip-text text-transparent bg-gradient-to-l from-blue-300 to-green-400 font-bold">Proyectos</h2>
+	{
+		projects.map((info) => (
+			<Project
+				name={info.name}
+				description={info.description}
+				image={info.image}
+				date={info.date}
+				urlDemo={info.urlDemo}
+				urlRepo={info.urlRepo}
+				tags={info.tags}
+			/>
+		))
+	}
+</div>

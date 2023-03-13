@@ -1,8 +1,15 @@
 ---
+const year = new Date().getFullYear();
 ---
 
-<footer class="w-full h-16 flex justify-around items-center bg-black text-white text-xl">
-	<p class="text-sm">Copyright © 2022 | Heri Roque Tello</p>
+<footer class="w-full h-28 flex justify-around items-center bg-black text-white text-xl">
+	<div class="flex flex-col sm:flex-row justify-around items-center gap-4 py-2">
+		<p class="text-sm">Copyright © {year} <span class="hidden sm:inline">|</span></p>
+		<div class="flex flex-col">
+			<span class="text-sm">Heri Roque Tello</span>
+			<img class="h-10" src="src/assets/svg/logo-white.svg" alt="" />
+		</div>
+	</div>
 	<div class="flex flex-row gap-4 text-2xl">
 		<a href="https://github.com/HeriRoqueTello" target="_blank" class="link"><i class="fa-brands fa-github-alt"></i></a>
 		<a target="_blank" href="https://www.linkedin.com/in/heriroquetello/"><i class="fa-brands fa-linkedin"></i></a>
